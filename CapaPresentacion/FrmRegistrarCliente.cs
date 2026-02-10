@@ -38,7 +38,7 @@ namespace CapaPresentacion
         // FrmRegistarCliente boton Guardar
         private void button1_Click(object sender, EventArgs e)
         {
-            string estado "";
+            string estado = "";
             if (rbtnactivo.Checked == true)
             {
                 estado = "ACTIVO";

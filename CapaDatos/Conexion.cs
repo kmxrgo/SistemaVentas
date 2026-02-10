@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CapaDatos
 {
     public class Conexion
-    {
+    {   
         public static string Conn = "Data source = CAMARGOLAPTOP; Initial Catalog = dbventas; Integrated Security = true";
     }
 }

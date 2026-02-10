@@ -89,7 +89,7 @@ namespace CapaPresentacion
             form.txtnombre.Text    = this.dlistado.CurrentRow.Cells["nombre"].Value.ToString();
             form.txtapellidos.Text = this.dlistado.CurrentRow.Cells["apellidos"].Value.ToString();
             form.txtdni.Text       = this.dlistado.CurrentRow.Cells["dni"].Value.ToString();
-            form.txtrfc.Text       = this.dlistado.CurrentRow.Cells["txtrfc"].Value.ToString();
+            form.txtrfc.Text       = this.dlistado.CurrentRow.Cells["rfc"].Value.ToString();
             form.txttelefono.Text  = this.dlistado.CurrentRow.Cells["telefono"].Value.ToString();
 
             string estado = this.dlistado.CurrentRow.Cells["estado"].Value.ToString();

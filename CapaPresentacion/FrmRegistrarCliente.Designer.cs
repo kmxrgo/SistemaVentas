@@ -239,7 +239,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btncancelar;
         public System.Windows.Forms.TextBox txtnombre;
         public System.Windows.Forms.TextBox txtapellidos;
@@ -249,5 +248,6 @@
         public System.Windows.Forms.RadioButton rbtnactivo;
         public System.Windows.Forms.RadioButton rbtninactivo;
         public System.Windows.Forms.TextBox txtidcliente;
+        public System.Windows.Forms.Button btnguardar;
     }
 }
