@@ -78,6 +78,7 @@
             this.btncancelar.TabIndex = 21;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnguardar
             // 
@@ -87,6 +88,7 @@
             this.btnguardar.TabIndex = 20;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // FrmRegistrarCategoria
             // 
@@ -101,6 +103,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmRegistrarCategoria";
             this.Text = "FrmCategoria";
+            this.Load += new System.EventHandler(this.FrmRegistrarCategoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
