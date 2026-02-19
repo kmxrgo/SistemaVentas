@@ -135,6 +135,7 @@
             this.dlistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dlistado.Location = new System.Drawing.Point(12, 143);
             this.dlistado.Name = "dlistado";
+            this.dlistado.ReadOnly = true;
             this.dlistado.RowHeadersWidth = 51;
             this.dlistado.RowTemplate.Height = 24;
             this.dlistado.Size = new System.Drawing.Size(776, 164);
