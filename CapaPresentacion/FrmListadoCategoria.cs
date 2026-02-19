@@ -58,16 +58,20 @@ namespace CapaPresentacion
 
         private void btneditar_Click(object sender, EventArgs e)
         {
-            FrmRegistrarCategoria form = new FrmRegistrarCategoria();
+            if (dlistado.CurrentRow != null)
+            {
+                FrmRegistrarCategoria form = new FrmRegistrarCategoria();
 
-            form.Edit = true;
-            form.Insert = false;
+                form.Edit = true;
+                form.Insert = false;
 
-            form.txtidcategoria.Text = this.dlistado.CurrentRow.Cells["idCategoria"].Value.ToString();
-            form.txtdescripcion.Text = this.dlistado.CurrentRow.Cells["descripcion"].Value.ToString();
+                // Asegúrate que el nombre de la columna sea exactamente "idcategoria" (todo minúsculas)
+                form.txtidcategoria.Text = this.dlistado.CurrentRow.Cells["idcategoria"].Value.ToString();
+                form.txtdescripcion.Text = this.dlistado.CurrentRow.Cells["descripcion"].Value.ToString();
 
-            form.Show();
-            this.Hide();
+                form.Show();
+                this.Hide();
+            }
         }
 
         private void btneliminar_Click(object sender, EventArgs e)

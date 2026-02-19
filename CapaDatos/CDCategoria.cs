@@ -101,7 +101,7 @@ namespace CapaDatos
                 Cmd.CommandType = CommandType.StoredProcedure;
 
                 // Agregar parámetros del stored procedure
-                Cmd.Parameters.AddWithValue("@idctegoria", cat.IdCategoria);  // ID del cliente a actualizar
+                Cmd.Parameters.AddWithValue("@idcategoria", cat.IdCategoria);  // ID del cliente a actualizar
                 Cmd.Parameters.AddWithValue("@descripcion", cat.Descripcion);
 
                 // Ejecutar el stored procedure

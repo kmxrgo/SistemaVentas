@@ -45,23 +45,35 @@ namespace CapaPresentacion
                     }
                     else if (this.Edit == true)
                     {
-                        CNCategoria.Editar(Convert.ToInt32(this.txtidcategoria.Text),
-                        this.txtdescripcion.Text.Trim().ToUpper());
+                        // Validar que el ID no sea vacío
+                        if (string.IsNullOrEmpty(this.txtidcategoria.Text))
+                        {
+                            MessageBox.Show("Error: ID de categoría no válido");
+                            return;
+                        }
+
+                        CNCategoria.Editar(
+                            Convert.ToInt32(this.txtidcategoria.Text),
+                            this.txtdescripcion.Text.Trim().ToUpper()
+                        );
+
                         MessageBox.Show("Categoría editada correctamente", "Sistema de Ventas",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    this.Insert = false;
-                    this.Edit = false;
-
+                    // Volver al listado
                     FrmListadoCategoria form = new FrmListadoCategoria();
                     form.Show();
                     this.Hide();
                 }
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("Error: El ID de categoría no tiene un formato válido");
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
