@@ -33,11 +33,11 @@
             this.btneditar = new System.Windows.Forms.Button();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnsalir = new System.Windows.Forms.Button();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.dlistado = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dlistado)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,7 @@
             this.btneliminar.TabIndex = 10;
             this.btneliminar.Text = "&Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btneditar
             // 
@@ -69,6 +70,7 @@
             this.btneditar.TabIndex = 9;
             this.btneditar.Text = "&Editar";
             this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // btnnuevo
             // 
@@ -78,6 +80,7 @@
             this.btnnuevo.TabIndex = 8;
             this.btnnuevo.Text = "&Nuevo";
             this.btnnuevo.UseVisualStyleBackColor = true;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
             // panel1
             // 
@@ -90,6 +93,15 @@
             this.panel1.Size = new System.Drawing.Size(776, 121);
             this.panel1.TabIndex = 11;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 16);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Buscar categoria";
+            // 
             // btnsalir
             // 
             this.btnsalir.Location = new System.Drawing.Point(682, 33);
@@ -98,6 +110,7 @@
             this.btnsalir.TabIndex = 4;
             this.btnsalir.Text = "&Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // txtbuscar
             // 
@@ -105,6 +118,7 @@
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(457, 22);
             this.txtbuscar.TabIndex = 2;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // btnbuscar
             // 
@@ -114,6 +128,7 @@
             this.btnbuscar.TabIndex = 3;
             this.btnbuscar.Text = "&Buscar";
             this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // dlistado
             // 
@@ -124,15 +139,6 @@
             this.dlistado.RowTemplate.Height = 24;
             this.dlistado.Size = new System.Drawing.Size(776, 164);
             this.dlistado.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Buscar categoria";
             // 
             // FrmListadoCategoria
             // 
@@ -147,6 +153,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmListadoCategoria";
             this.Text = "FrmListadoCategoria";
+            this.Load += new System.EventHandler(this.FrmListadoCategoria_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dlistado)).EndInit();
