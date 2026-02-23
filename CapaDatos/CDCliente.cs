@@ -23,7 +23,6 @@ namespace CapaDatos
         public string Estado { get; set; }
         public string Buscar { get; set; }
 
-
         // MÉTODO LISTAR CLIENTES
         // Obtiene todos los clientes de la base de datos ejecutando el stored procedure splistar_cliente
         // RETORNA:
