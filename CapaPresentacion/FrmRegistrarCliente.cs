@@ -118,5 +118,10 @@ namespace CapaPresentacion
             form.Show();
             this.Hide();
         }
+
+        private void txtidcliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -199,6 +199,7 @@
             this.txtidcliente.Size = new System.Drawing.Size(66, 22);
             this.txtidcliente.TabIndex = 16;
             this.txtidcliente.Visible = false;
+            this.txtidcliente.TextChanged += new System.EventHandler(this.txtidcliente_TextChanged);
             // 
             // FrmRegistrarCliente
             // 
