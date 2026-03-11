@@ -9,11 +9,12 @@ using CapaDatos;
 
 namespace CapaNegocio
 {
+    public class CNProducto
     {
+        public static DataTable BuscarCodigo(string textobuscar)
+        {
             CDProducto Datos = new CDProducto();
-            Datos.Buscar = textobuscar;
-
-            return Datos.BuscarCodigo(Datos);
+            return Datos.BuscarCodigo(textobuscar);
         }
     }
 }

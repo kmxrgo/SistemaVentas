@@ -84,6 +84,7 @@ namespace CapaPresentacion
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
+                    /*
                     else if (this.Edit == true)
                     {
                         CNProducto.Editar(
@@ -105,13 +106,16 @@ namespace CapaPresentacion
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
+                    */
 
                     this.Insert = false;
                     this.Edit = false;
 
+                    /*
                     FrmListadoProducto form = new FrmListadoProducto();
                     form.Show();
                     this.Hide();
+                    */
                 }
             }
             catch (Exception ex)

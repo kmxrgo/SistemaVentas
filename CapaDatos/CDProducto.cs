@@ -9,13 +9,12 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
+    public class CDProducto
     {
-                    conexion.Close();
-                }
-            }
-            return resul;
+        public DataTable BuscarCodigo(string textobuscar)
+        {
+            DataTable DtResultado = new DataTable();
+            return DtResultado;
         }
     }
-
-
 }
