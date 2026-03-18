@@ -22,7 +22,17 @@ namespace CapaPresentacion
 
         private void FrmRegistrarProducto_Load(object sender, EventArgs e)
         {
+            this.Top = 0;
+            this.Left = 0;
 
+            this.CargarCategoria();
+        }
+
+        private void CargarCategoria()
+        {
+            cboidcategoria.DataSource = CNCategoria.Listar();
+            cboidcategoria.ValueMember = "idcategoria";
+            cboidcategoria.DisplayMember = "descripcion";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -44,7 +54,7 @@ namespace CapaPresentacion
         {
             string estado = "";
 
-            if (rbtnactivo.Checked == true)
+            if (rbactivo.Checked == true)
             {
                 estado = "ACTIVO";
             }
@@ -70,13 +80,13 @@ namespace CapaPresentacion
                             this.txtcodigo.Text,
                             this.txtnombre.Text,
                             this.txtdescripcion.Text,
-                            this.dtingreso.Value,
-                            this.dtvencimiento.Value,
+                            this.dtfechaingreso.Value,
+                            this.dtfechavencimiento.Value,
                             Convert.ToDouble(this.txtpreciocompra.Text),
                             Convert.ToDouble(this.txtprecioventa.Text),
-                            Convert.ToInt32(this.txtstock.Text),
+                            Convert.ToInt32(this.txtcantidad.Text),
                             estado,
-                            Convert.ToInt32(this.cbcategoria.SelectedValue)
+                            Convert.ToInt32(this.cboidcategoria.SelectedValue)
                         );
 
                         MessageBox.Show("Producto registrado correctamente",
@@ -84,7 +94,7 @@ namespace CapaPresentacion
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
-                    /*
+                    
                     else if (this.Edit == true)
                     {
                         CNProducto.Editar(
@@ -92,13 +102,13 @@ namespace CapaPresentacion
                             this.txtcodigo.Text,
                             this.txtnombre.Text,
                             this.txtdescripcion.Text,
-                            this.dtingreso.Value,
-                            this.dtvencimiento.Value,
-                            Convert.ToDecimal(this.txtpreciocompra.Text),
-                            Convert.ToDecimal(this.txtprecioventa.Text),
-                            Convert.ToInt32(this.txtstock.Text),
+                            this.dtfechaingreso.Value,
+                            this.dtfechavencimiento.Value,
+                            Convert.ToDouble(this.txtpreciocompra.Text),
+                            Convert.ToDouble(this.txtprecioventa.Text),
+                            Convert.ToInt32(this.txtcantidad.Text),
                             estado,
-                            Convert.ToInt32(this.cbcategoria.SelectedValue)
+                            Convert.ToInt32(this.cboidcategoria.SelectedValue)
                         );
 
                         MessageBox.Show("Producto editado correctamente",
@@ -106,16 +116,14 @@ namespace CapaPresentacion
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
-                    */
-
+                    
                     this.Insert = false;
                     this.Edit = false;
 
-                    /*
                     FrmListadoProducto form = new FrmListadoProducto();
                     form.Show();
                     this.Hide();
-                    */
+                    
                 }
             }
             catch (Exception ex)
@@ -157,6 +165,18 @@ namespace CapaPresentacion
         private void rbtnactivo_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            FrmListadoProducto form = new FrmListadoProducto();
+            form.Show();
+            this.Hide();
         }
     }
 }
