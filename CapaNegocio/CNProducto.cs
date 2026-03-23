@@ -13,7 +13,7 @@ namespace CapaNegocio
     {
         public static DataTable Listar()
         {
-            CDCategoria Datos = new CDCategoria();
+            CDProducto Datos = new CDProducto();
             return Datos.Listar();
         }
 
