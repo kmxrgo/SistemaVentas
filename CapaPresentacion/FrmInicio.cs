@@ -39,5 +39,10 @@ namespace CapaPresentacion
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void FrmInicio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
