@@ -51,9 +51,15 @@ namespace CapaPresentacion
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             FrmRegistrarCategoria form = new FrmRegistrarCategoria();
-            form.Show();
+            
             form.Insert = true;
-            this.Hide();
+
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -69,8 +75,12 @@ namespace CapaPresentacion
                 form.txtidcategoria.Text = this.dlistado.CurrentRow.Cells["idcategoria"].Value.ToString();
                 form.txtdescripcion.Text = this.dlistado.CurrentRow.Cells["descripcion"].Value.ToString();
 
-                form.Show();
-                this.Hide();
+                FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+                if (principal != null)
+                {
+                    principal.AbrirFormulario(form);
+                }
             }
         }
 

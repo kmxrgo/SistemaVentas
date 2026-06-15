@@ -80,8 +80,12 @@ namespace CapaPresentacion
         private void btncancelar_Click(object sender, EventArgs e)
         {
             FrmListadoCategoria form = new FrmListadoCategoria();
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
     }
 }

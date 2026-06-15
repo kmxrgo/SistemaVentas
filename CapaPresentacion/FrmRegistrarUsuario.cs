@@ -98,8 +98,12 @@ namespace CapaPresentacion
 
                     FrmListadoUsuario form = new FrmListadoUsuario();
 
-                    form.Show();
-                    this.Hide();
+                    FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+                    if (principal != null)
+                    {
+                        principal.AbrirFormulario(form);
+                    }
                 }
             }
             catch (Exception Ex)
@@ -112,8 +116,12 @@ namespace CapaPresentacion
         {
             FrmListadoUsuario form = new FrmListadoUsuario();
 
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

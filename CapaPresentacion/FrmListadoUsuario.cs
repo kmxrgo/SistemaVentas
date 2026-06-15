@@ -69,10 +69,15 @@ namespace CapaPresentacion
         {
             FrmRegistrarUsuario form = new FrmRegistrarUsuario();
 
-            form.Show();
             form.Insert = true;
             form.Edit = false;
-            this.Hide();
+
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -99,8 +104,12 @@ namespace CapaPresentacion
                 form.rbinactivo.Checked = true;
             }
 
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -132,6 +141,11 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void dlistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

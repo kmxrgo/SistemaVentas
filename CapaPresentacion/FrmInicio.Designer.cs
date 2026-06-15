@@ -61,6 +61,7 @@
             this.btnempleados = new System.Windows.Forms.Button();
             this.btnconfiguraciones = new System.Windows.Forms.Button();
             this.mnureportes = new System.Windows.Forms.Panel();
+            this.btnreporteventas = new System.Windows.Forms.Button();
             this.btnreporteempleado = new System.Windows.Forms.Button();
             this.btnreportecliente = new System.Windows.Forms.Button();
             this.btnreporteproducto = new System.Windows.Forms.Button();
@@ -82,6 +83,7 @@
             this.ClientesImg = new System.Windows.Forms.PictureBox();
             this.tmrsubmenu = new System.Windows.Forms.Timer(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
@@ -109,6 +111,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lblusuario);
             this.panel1.Controls.Add(this.btncerrar);
             this.panel1.Controls.Add(this.btnrestaurar);
@@ -297,9 +300,9 @@
             this.btnproveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnproveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnproveedor.ForeColor = System.Drawing.Color.White;
-            this.btnproveedor.Location = new System.Drawing.Point(57, 79);
+            this.btnproveedor.Location = new System.Drawing.Point(52, 79);
             this.btnproveedor.Name = "btnproveedor";
-            this.btnproveedor.Size = new System.Drawing.Size(139, 38);
+            this.btnproveedor.Size = new System.Drawing.Size(149, 38);
             this.btnproveedor.TabIndex = 3;
             this.btnproveedor.Text = "● Proveedores";
             this.btnproveedor.UseVisualStyleBackColor = false;
@@ -376,6 +379,7 @@
             this.btngenerarventa.TabIndex = 2;
             this.btngenerarventa.Text = "● Generar venta";
             this.btngenerarventa.UseVisualStyleBackColor = false;
+            this.btngenerarventa.Click += new System.EventHandler(this.btngenerarventa_Click);
             // 
             // btnventas
             // 
@@ -440,7 +444,7 @@
             this.btnventafechas.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnventafechas.FlatAppearance.BorderSize = 0;
             this.btnventafechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnventafechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnventafechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnventafechas.ForeColor = System.Drawing.Color.White;
             this.btnventafechas.Location = new System.Drawing.Point(37, 37);
             this.btnventafechas.Name = "btnventafechas";
@@ -448,6 +452,7 @@
             this.btnventafechas.TabIndex = 2;
             this.btnventafechas.Text = "● Ventas por fecha";
             this.btnventafechas.UseVisualStyleBackColor = false;
+            this.btnventafechas.Click += new System.EventHandler(this.btnventafechas_Click);
             // 
             // btnconsultas
             // 
@@ -527,16 +532,33 @@
             // 
             // mnureportes
             // 
+            this.mnureportes.Controls.Add(this.btnreporteventas);
             this.mnureportes.Controls.Add(this.btnreporteempleado);
             this.mnureportes.Controls.Add(this.btnreportecliente);
             this.mnureportes.Controls.Add(this.btnreporteproducto);
             this.mnureportes.Controls.Add(this.btnreportes);
             this.mnureportes.Location = new System.Drawing.Point(3, 321);
-            this.mnureportes.MaximumSize = new System.Drawing.Size(214, 160);
+            this.mnureportes.MaximumSize = new System.Drawing.Size(254, 200);
             this.mnureportes.MinimumSize = new System.Drawing.Size(214, 37);
             this.mnureportes.Name = "mnureportes";
             this.mnureportes.Size = new System.Drawing.Size(214, 37);
             this.mnureportes.TabIndex = 9;
+            this.mnureportes.Paint += new System.Windows.Forms.PaintEventHandler(this.mnureportes_Paint);
+            // 
+            // btnreporteventas
+            // 
+            this.btnreporteventas.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnreporteventas.FlatAppearance.BorderSize = 0;
+            this.btnreporteventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreporteventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreporteventas.ForeColor = System.Drawing.Color.White;
+            this.btnreporteventas.Location = new System.Drawing.Point(57, 159);
+            this.btnreporteventas.Name = "btnreporteventas";
+            this.btnreporteventas.Size = new System.Drawing.Size(134, 38);
+            this.btnreporteventas.TabIndex = 5;
+            this.btnreporteventas.Text = "● Ventas";
+            this.btnreporteventas.UseVisualStyleBackColor = false;
+            this.btnreporteventas.Click += new System.EventHandler(this.btnreporteventas_Click);
             // 
             // btnreporteempleado
             // 
@@ -579,6 +601,7 @@
             this.btnreporteproducto.TabIndex = 2;
             this.btnreporteproducto.Text = "● Productos";
             this.btnreporteproducto.UseVisualStyleBackColor = false;
+            this.btnreporteproducto.Click += new System.EventHandler(this.btnreporteproducto_Click);
             // 
             // btnreportes
             // 
@@ -791,6 +814,17 @@
             this.panelContenedor.TabIndex = 4;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(14, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(205, 44);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "POSVenta";
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -887,5 +921,7 @@
         private System.Windows.Forms.Label lblusuario;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Button btnreporteventas;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -115,8 +115,12 @@ namespace CapaPresentacion
         private void btncancelar_Click(object sender, EventArgs e)
         {
             FrmListadoCliente form = new FrmListadoCliente();
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void txtidcliente_TextChanged(object sender, EventArgs e)

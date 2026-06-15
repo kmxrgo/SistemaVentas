@@ -106,6 +106,9 @@ namespace CapaPresentacion
                 }
                 else
                 {
+
+                    this.Insert = true;
+
                     if (this.Insert == true)
                     {
                         CNProducto.Guardar(

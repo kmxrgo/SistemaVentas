@@ -262,9 +262,6 @@ namespace CapaPresentacion
         private void btnusuarios_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmListadoUsuario());
-
-            mnuconfiguraciones.Width = 214;
-            mnuconfiguraciones.Height = 37;
         }
 
         private void ClientesImg_Click(object sender, EventArgs e)
@@ -306,6 +303,55 @@ namespace CapaPresentacion
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void mnureportes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnreporteventas_Click(object sender, EventArgs e)
+        {
+
+            FrmReporteFactura frm = new FrmReporteFactura();
+            frm.idventa = 1;
+
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(frm);
+            }
+
+        }
+
+        private void btnreporteproducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnventafechas_Click(object sender, EventArgs e)
+        {
+            FrmConsultaVentas frm = new FrmConsultaVentas();
+
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(frm);
+            }
+        }
+
+        private void btngenerarventa_Click(object sender, EventArgs e)
+        {
+            FrmGenerarVenta frm = new FrmGenerarVenta();
+
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(frm);
+            }
         }
     }
 }

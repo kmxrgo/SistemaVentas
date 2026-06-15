@@ -138,6 +138,7 @@
             this.dlistado.RowTemplate.Height = 24;
             this.dlistado.Size = new System.Drawing.Size(776, 164);
             this.dlistado.TabIndex = 4;
+            this.dlistado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dlistado_CellContentClick);
             // 
             // btnnuevo
             // 

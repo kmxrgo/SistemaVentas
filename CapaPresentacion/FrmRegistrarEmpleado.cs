@@ -69,8 +69,12 @@ namespace CapaPresentacion
                     Edit = false;
 
                     FrmListadoEmpleado form = new FrmListadoEmpleado();
-                    form.Show();
-                    this.Hide();
+                    FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+                    if (principal != null)
+                    {
+                        principal.AbrirFormulario(form);
+                    }
                 }
             }
             catch (Exception Ex)
@@ -82,8 +86,12 @@ namespace CapaPresentacion
         private void btncancelar_Click(object sender, EventArgs e)
         {
             FrmListadoEmpleado form = new FrmListadoEmpleado();
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
     }
 }

@@ -75,8 +75,12 @@ namespace CapaPresentacion
 
             form.Insert = true;
 
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -103,8 +107,12 @@ namespace CapaPresentacion
                 form.rbtninactivo.Checked = true;
             }
 
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void btneliminar_Click(object sender, EventArgs e)

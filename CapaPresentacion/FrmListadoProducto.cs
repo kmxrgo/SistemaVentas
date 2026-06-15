@@ -13,6 +13,11 @@ namespace CapaPresentacion
 {
     public partial class FrmListadoProducto : Form
     {
+
+        public int IdProducto;
+        public string NombreProducto;
+        public decimal Precio;
+
         public FrmListadoProducto()
         {
             InitializeComponent();
@@ -119,8 +124,12 @@ namespace CapaPresentacion
                 form.rbinactivo.Checked = true;
             }
 
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -158,6 +167,16 @@ namespace CapaPresentacion
         private void btnsalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dlistado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdProducto = Convert.ToInt32(dlistado.CurrentRow.Cells["idproducto"].Value);
+            NombreProducto = dlistado.CurrentRow.Cells["nombre"].Value.ToString();
+            Precio = Convert.ToDecimal(dlistado.CurrentRow.Cells["precio_venta"].Value);
+
+            this.Close();
+
         }
     }
 }
