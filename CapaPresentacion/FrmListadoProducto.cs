@@ -80,9 +80,14 @@ namespace CapaPresentacion
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             FrmRegistrarProducto form = new FrmRegistrarProducto();
-            form.Show();
-            form.Insert = true;
-            this.Hide();
+
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
+
         }
 
         private void btneditar_Click(object sender, EventArgs e)

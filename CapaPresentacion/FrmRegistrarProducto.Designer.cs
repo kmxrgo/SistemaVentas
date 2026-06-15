@@ -54,6 +54,11 @@
             this.txtcantidad = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtidproducto = new System.Windows.Forms.TextBox();
+            this.picBarcode = new System.Windows.Forms.PictureBox();
+            this.btngenerar = new System.Windows.Forms.Button();
+            this.btnimprimir = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -96,7 +101,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(372, 325);
+            this.label4.Location = new System.Drawing.Point(419, 325);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 16);
             this.label4.TabIndex = 11;
@@ -112,7 +117,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(317, 254);
+            this.label7.Location = new System.Drawing.Point(333, 254);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 16);
             this.label7.TabIndex = 14;
@@ -121,7 +126,7 @@
             // rbactivo
             // 
             this.rbactivo.AutoSize = true;
-            this.rbactivo.Location = new System.Drawing.Point(318, 273);
+            this.rbactivo.Location = new System.Drawing.Point(334, 273);
             this.rbactivo.Name = "rbactivo";
             this.rbactivo.Size = new System.Drawing.Size(65, 20);
             this.rbactivo.TabIndex = 15;
@@ -133,7 +138,7 @@
             // rbinactivo
             // 
             this.rbinactivo.AutoSize = true;
-            this.rbinactivo.Location = new System.Drawing.Point(388, 273);
+            this.rbinactivo.Location = new System.Drawing.Point(404, 273);
             this.rbinactivo.Name = "rbinactivo";
             this.rbinactivo.Size = new System.Drawing.Size(74, 20);
             this.rbinactivo.TabIndex = 16;
@@ -143,7 +148,7 @@
             // 
             // btnguardar
             // 
-            this.btnguardar.Location = new System.Drawing.Point(352, 421);
+            this.btnguardar.Location = new System.Drawing.Point(400, 521);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(75, 23);
             this.btnguardar.TabIndex = 17;
@@ -153,7 +158,7 @@
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(433, 421);
+            this.btncancelar.Location = new System.Drawing.Point(481, 521);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(75, 23);
             this.btncancelar.TabIndex = 18;
@@ -236,7 +241,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(317, 66);
+            this.label10.Location = new System.Drawing.Point(333, 66);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 16);
             this.label10.TabIndex = 27;
@@ -246,7 +251,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(317, 128);
+            this.label11.Location = new System.Drawing.Point(333, 128);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 16);
             this.label11.TabIndex = 28;
@@ -254,21 +259,21 @@
             // 
             // txtpreciocompra
             // 
-            this.txtpreciocompra.Location = new System.Drawing.Point(320, 85);
+            this.txtpreciocompra.Location = new System.Drawing.Point(336, 85);
             this.txtpreciocompra.Name = "txtpreciocompra";
             this.txtpreciocompra.Size = new System.Drawing.Size(142, 22);
             this.txtpreciocompra.TabIndex = 29;
             // 
             // txtprecioventa
             // 
-            this.txtprecioventa.Location = new System.Drawing.Point(320, 147);
+            this.txtprecioventa.Location = new System.Drawing.Point(336, 147);
             this.txtprecioventa.Name = "txtprecioventa";
             this.txtprecioventa.Size = new System.Drawing.Size(142, 22);
             this.txtprecioventa.TabIndex = 30;
             // 
             // txtcantidad
             // 
-            this.txtcantidad.Location = new System.Drawing.Point(320, 206);
+            this.txtcantidad.Location = new System.Drawing.Point(336, 206);
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(142, 22);
             this.txtcantidad.TabIndex = 31;
@@ -276,7 +281,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(317, 187);
+            this.label12.Location = new System.Drawing.Point(333, 187);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(61, 16);
             this.label12.TabIndex = 32;
@@ -290,11 +295,54 @@
             this.txtidproducto.TabIndex = 33;
             this.txtidproducto.Visible = false;
             // 
+            // picBarcode
+            // 
+            this.picBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picBarcode.Location = new System.Drawing.Point(271, 347);
+            this.picBarcode.Name = "picBarcode";
+            this.picBarcode.Size = new System.Drawing.Size(285, 120);
+            this.picBarcode.TabIndex = 34;
+            this.picBarcode.TabStop = false;
+            this.picBarcode.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btngenerar
+            // 
+            this.btngenerar.Location = new System.Drawing.Point(274, 473);
+            this.btngenerar.Name = "btngenerar";
+            this.btngenerar.Size = new System.Drawing.Size(75, 23);
+            this.btngenerar.TabIndex = 35;
+            this.btngenerar.Text = "Generar";
+            this.btngenerar.UseVisualStyleBackColor = true;
+            this.btngenerar.Click += new System.EventHandler(this.btngenerar_Click);
+            // 
+            // btnimprimir
+            // 
+            this.btnimprimir.Location = new System.Drawing.Point(355, 473);
+            this.btnimprimir.Name = "btnimprimir";
+            this.btnimprimir.Size = new System.Drawing.Size(75, 23);
+            this.btnimprimir.TabIndex = 36;
+            this.btnimprimir.Text = "Imprimir";
+            this.btnimprimir.UseVisualStyleBackColor = true;
+            this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(271, 325);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(165, 16);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Generar Codigo de Barras";
+            // 
             // FrmRegistrarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 458);
+            this.ClientSize = new System.Drawing.Size(568, 556);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.btnimprimir);
+            this.Controls.Add(this.btngenerar);
+            this.Controls.Add(this.picBarcode);
             this.Controls.Add(this.txtidproducto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtcantidad);
@@ -324,6 +372,7 @@
             this.Name = "FrmRegistrarProducto";
             this.Text = "FrmRegistrarProducto";
             this.Load += new System.EventHandler(this.FrmRegistrarProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +406,9 @@
         public System.Windows.Forms.DateTimePicker dtfechavencimiento;
         public System.Windows.Forms.ComboBox cboidcategoria;
         public System.Windows.Forms.TextBox txtidproducto;
+        private System.Windows.Forms.PictureBox picBarcode;
+        public System.Windows.Forms.Button btngenerar;
+        public System.Windows.Forms.Button btnimprimir;
+        private System.Windows.Forms.Label label13;
     }
 }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 
+using ZXing;
+using System.Drawing.Printing;
+
 namespace CapaPresentacion
 {
     public partial class FrmRegistrarProducto : Form
@@ -26,6 +29,35 @@ namespace CapaPresentacion
             this.Left = 0;
 
             this.CargarCategoria();
+
+            documento.PrintPage += Documento_PrintPage;
+        }
+
+        PrintDocument documento = new PrintDocument();
+
+        private void Documento_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            if (picBarcode.Image != null)
+            {
+                int ancho = 600;
+                int alto = 200;
+
+                int x = (e.PageBounds.Width - ancho) / 2;
+                int y = (e.PageBounds.Height - alto) / 3;
+
+                e.Graphics.DrawImage(picBarcode.Image, x, y, ancho, alto);
+
+                SizeF tamañoTexto = e.Graphics.MeasureString(txtcodigo.Text, new Font("Arial", 20, FontStyle.Bold));
+
+                float xTexto = (e.PageBounds.Width - tamañoTexto.Width) / 2;
+                float yTexto = y + alto + 20;
+
+                e.Graphics.DrawString(txtcodigo.Text,
+                    new Font("Arial", 20, FontStyle.Bold),
+                    Brushes.Black,
+                    xTexto,
+                    yTexto);
+            }
         }
 
         private void CargarCategoria()
@@ -120,10 +152,12 @@ namespace CapaPresentacion
                     this.Insert = false;
                     this.Edit = false;
 
-                    FrmListadoProducto form = new FrmListadoProducto();
-                    form.Show();
-                    this.Hide();
-                    
+                    FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+                    if (principal != null)
+                    {
+                        principal.AbrirFormulario(new FrmListadoProducto());
+                    }
                 }
             }
             catch (Exception ex)
@@ -174,9 +208,55 @@ namespace CapaPresentacion
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            FrmListadoProducto form = new FrmListadoProducto();
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(new FrmListadoProducto());
+            }
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btngenerar_Click(object sender, EventArgs e)
+        {
+
+            if (txtcodigo.Text == "")
+            {
+                MessageBox.Show("Ingrese un código");
+                return;
+            }
+
+            BarcodeWriter writer = new BarcodeWriter();
+
+            writer.Format = BarcodeFormat.CODE_128;
+
+            writer.Options = new ZXing.Common.EncodingOptions
+            {
+                Width = picBarcode.Width,
+                Height = picBarcode.Height,
+                Margin = 20
+            };
+
+            picBarcode.Image = writer.Write(txtcodigo.Text);
+
+        }
+
+        private void btnimprimir_Click(object sender, EventArgs e)
+        {
+            if (picBarcode.Image == null)
+            {
+                MessageBox.Show("Primero genera el código de barras");
+                return;
+            }
+
+            PrintPreviewDialog vista = new PrintPreviewDialog();
+            vista.Document = documento;
+            vista.ShowDialog();
         }
     }
 }

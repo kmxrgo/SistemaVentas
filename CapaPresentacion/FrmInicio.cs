@@ -12,6 +12,8 @@ namespace CapaPresentacion
 {
     public partial class FrmInicio : Form
     {
+        public string usuario = "";
+
         string opcion;
         bool expanderalmacen;
         bool expandercompras;
@@ -20,7 +22,20 @@ namespace CapaPresentacion
         bool expanderconfiguraciones;
         bool expanderreportes;
 
-        public string usuario = "";
+        public void AbrirFormulario(Form frm)
+        {
+            if (panelContenedor.Controls.Count > 0)
+                panelContenedor.Controls.RemoveAt(0);
+
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            panelContenedor.Controls.Add(frm);
+            panelContenedor.Tag = frm;
+
+            frm.Show();
+        }
 
         public FrmInicio()
         {
@@ -42,7 +57,7 @@ namespace CapaPresentacion
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
-            btnmaximizar.Visible = false;
+            btnmaximizar.Visible = true;
             btnrestaurar.Visible = true;
         }
 
@@ -53,7 +68,7 @@ namespace CapaPresentacion
 
         private void FrmInicio_Load(object sender, EventArgs e)
         {
-            lblusuario.Text = usuario;
+            lblusuario.Text = "Bienvenido, " + usuario.ToUpper();
         }
 
         private void tmrsubmenu_Tick(object sender, EventArgs e)
@@ -225,43 +240,28 @@ namespace CapaPresentacion
 
         private void btnproducto_Click(object sender, EventArgs e)
         {
-            FrmListadoProducto frm = new FrmListadoProducto();
-            frm.MdiParent = this;
-            frm.Show();
-            frm.BringToFront();
+            tmrsubmenu.Stop();
 
-            mnualmacen.Width = 214;
-            mnualmacen.Height = 37;
+            AbrirFormulario(new FrmListadoProducto());
         }
 
         private void btncategoria_Click(object sender, EventArgs e)
         {
-            FrmListadoCategoria frm = new FrmListadoCategoria();
-            frm.MdiParent = this;
-            frm.Show();
-            frm.BringToFront();
+            tmrsubmenu.Stop();
 
-            mnualmacen.Width = 214;
-            mnualmacen.Height = 37;
+            AbrirFormulario(new FrmListadoCategoria());
         }
 
         private void btnempleados_Click(object sender, EventArgs e)
         {
-            FrmListadoEmpleado frm = new FrmListadoEmpleado();
-            frm.MdiParent = this;
-            frm.Show();
-            frm.BringToFront();
+            tmrsubmenu.Stop();
 
-            mnuconfiguraciones.Width = 214;
-            mnuconfiguraciones.Height = 37;
+            AbrirFormulario(new FrmListadoEmpleado());
         }
 
         private void btnusuarios_Click(object sender, EventArgs e)
         {
-            FrmListadoUsuario frm = new FrmListadoUsuario();
-            frm.MdiParent = this;
-            frm.Show();
-            frm.BringToFront();
+            AbrirFormulario(new FrmListadoUsuario());
 
             mnuconfiguraciones.Width = 214;
             mnuconfiguraciones.Height = 37;
@@ -274,25 +274,16 @@ namespace CapaPresentacion
 
         private void btnclientes_Click(object sender, EventArgs e)
         {
-            FrmListadoCliente frm = new FrmListadoCliente();
-            frm.MdiParent = this;
-            frm.Show();
-            frm.BringToFront();
+            tmrsubmenu.Stop();
 
-            mnuventas.Width = 214;
-            mnuventas.Height = 37;
-
+            AbrirFormulario(new FrmListadoCliente());
         }
 
         private void btnproveedor_Click(object sender, EventArgs e)
         {
-            FrmListadoProveedor frm = new FrmListadoProveedor();
-            frm.MdiParent = this;
-            frm.Show();
-            frm.BringToFront();
+            tmrsubmenu.Stop();
 
-            mnucompra.Width = 214;
-            mnucompra.Height = 37;
+            AbrirFormulario(new FrmListadoProveedor());
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -305,6 +296,16 @@ namespace CapaPresentacion
             this.Hide();
             FrmLogin frm = new FrmLogin();
             frm.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

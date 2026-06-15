@@ -88,6 +88,9 @@ namespace CapaPresentacion
                 else
                 {
                     FrmInicio frm = new FrmInicio();
+
+                    frm.usuario = Datos.Rows[0]["usuario"].ToString();
+
                     frm.Show();
                     this.Hide();
                 }

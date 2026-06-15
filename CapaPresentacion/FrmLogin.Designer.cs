@@ -64,7 +64,7 @@
             // 
             // btningresar
             // 
-            this.btningresar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btningresar.BackColor = System.Drawing.Color.DarkCyan;
             this.btningresar.FlatAppearance.BorderSize = 0;
             this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -79,7 +79,7 @@
             // 
             // btnsalir
             // 
-            this.btnsalir.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnsalir.BackColor = System.Drawing.Color.DarkCyan;
             this.btnsalir.FlatAppearance.BorderSize = 0;
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsalir.ForeColor = System.Drawing.SystemColors.Window;
@@ -102,6 +102,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkCyan;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -126,7 +127,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
             this.label3.Location = new System.Drawing.Point(180, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(333, 32);
@@ -153,7 +154,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel2.BackColor = System.Drawing.Color.DarkCyan;
             this.panel2.Location = new System.Drawing.Point(186, 116);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(222, 2);
@@ -161,7 +162,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel3.BackColor = System.Drawing.Color.DarkCyan;
             this.panel3.Location = new System.Drawing.Point(186, 225);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(222, 2);

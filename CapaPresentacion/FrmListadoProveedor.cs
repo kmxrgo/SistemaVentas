@@ -74,10 +74,15 @@ namespace CapaPresentacion
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             FrmRegistrarProveedor form = new FrmRegistrarProveedor();
-            form.Show();
             form.Insert = true;
             form.Edit = false;
-            this.Hide();
+
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
         }
 
         private void btneditar_Click(object sender, EventArgs e)
@@ -103,8 +108,12 @@ namespace CapaPresentacion
                 form.rbtninactivo.Checked = true;
             }
 
-            form.Show();
-            this.Hide();
+            FrmInicio principal = Application.OpenForms["FrmInicio"] as FrmInicio;
+
+            if (principal != null)
+            {
+                principal.AbrirFormulario(form);
+            }
 
         }
 
